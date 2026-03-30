@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SOMA Birthday</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500;700&family=Poppins:wght@400;600&display=swap"
+        rel="stylesheet">
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+</head>
+
+<body>
+
+<div id="wrapper">
+
+    <div class="content">
+
+        <!-- LEFT SIDE -->
+        <div class="left">
+            <h1>🎂 Happy Birthday Soma 💖</h1>
+
+            <button id="btn__letter">Click Here SOMA 💌</button>
+        </div>
+
+        <!-- RIGHT SIDE (IMAGE ADDED HERE) -->
+        <div class="right">
+            <div class="image">
+                <img src="image 3.png" alt="Soma">
+            </div>
+        </div>
+
+    </div>
+
+    <!-- MESSAGE BOX -->
+    <div class="boxMail">
+        <i class="fa-solid fa-xmark"></i>
+
+        <div class="boxMail-container">
+
+            <h2>Happy 18th Birthday Soma 🥳🎂</h2>
+
+            <!-- IMAGE AGAIN IN LETTER -->
+            <div class="image">
+                <img src="image 3.png" alt="Soma">
+            </div>
+
+            <p class="text__letter"></p>
+
+        </div>
+    </div>
+
+</div>
+
+</body>
+
+<script>
+
+let message = "My love Soma 💖 You are very special to me. I wish your life is filled with happiness, success and beautiful memories. No matter what happens, you will always be important to me. Happy 18th Birthday 🎂✨";
+
+let i = 0;
+let speed = 40;
+
+let textArea = document.querySelector(".text__letter");
+
+document.getElementById("btn__letter").onclick = function () {
+    document.querySelector(".boxMail").style.display = "block";
+    typeWriter();
+};
+
+function typeWriter() {
+    if (i < message.length) {
+        textArea.innerHTML += message.charAt(i);
+        i++;
+        setTimeout(typeWriter, speed);
+    }
+}
+
+document.querySelector(".fa-xmark").onclick = function () {
+    document.querySelector(".boxMail").style.display = "none";
+    textArea.innerHTML = "";
+    i = 0;
+};
+
+</script>
+
+</html>
